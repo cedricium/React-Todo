@@ -21,6 +21,31 @@ class App extends React.Component {
     this.clearTodosHandler = this.clearTodosHandler.bind(this)
     this.handleInputChange = this.handleInputChange.bind(this)
     this.handleToggleCompleted = this.handleToggleCompleted.bind(this)
+    this.saveToLocalStorage = this.saveToLocalStorage.bind(this)
+    this.retrieveFromLocalStorage = this.retrieveFromLocalStorage.bind(this)
+  }
+
+  componentDidMount() {
+    window.addEventListener('load', this.retrieveFromLocalStorage)
+    window.addEventListener('unload', this.saveToLocalStorage)
+  }
+
+  componentWillUnmount() {
+    window.addEventListener('load', this.retrieveFromLocalStorage)
+    window.addEventListener('unload', this.saveToLocalStorage)
+  }
+
+  saveToLocalStorage() {
+    localStorage.setItem('todos', JSON.stringify(this.state.todos))
+  }
+
+  retrieveFromLocalStorage() {
+    const persistedTodos = window.localStorage.getItem('todos')
+    if (persistedTodos !== null) {
+      this.setState({
+        todos: JSON.parse(persistedTodos)
+      })
+    }
   }
 
   addTodoHandler(event) {
