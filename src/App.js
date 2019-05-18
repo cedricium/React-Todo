@@ -1,4 +1,6 @@
 import React from 'react';
+import dayjs from 'dayjs'
+import './components/TodoComponents/Todo.css'
 
 import TodoList from './components/TodoComponents/TodoList'
 import TodoForm from './components/TodoComponents/TodoForm'
@@ -94,8 +96,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Todo List: MVP</h1>
+      <div className="App">
+        <h1 className="title">Get Sh*t Done</h1>
+        <p className="todays-date" style={{textTransform: 'upperCase'}}>{dayjs().format('ddd, D MMM YYYY')}</p>
         <TodoForm
           task={this.state.task}
           addTodoHandler={this.addTodoHandler}

@@ -1,3 +1,163 @@
-.todo.strike {
+@import url('https://rsms.me/inter/inter.css');
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+html,
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  margin: 5rem auto 0;
+  max-width: 80rem;
+  font-size: 1.6rem;
+}
+
+.App .title {
+  margin: 0;
+  padding: 0;
+  font-size: 4.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.App .todays-date {
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+
+.App .todo-form {
+  margin: 3rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.App .todo-form input {
+  padding: 0 1rem;
+  height: 3.5rem;
+  width: calc(100% - 30rem);
+  min-width: 26rem;
+  border: solid thin #E5E5E5;
+  font-size: 1.6rem;
+
+  /* Safari Mobile input fixes */
+  background-clip: padding-box;  /* removes inner box shadow */
+  border-radius: 0;  /* resets default border-radius */
+
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
+.App .todo-form input::placeholder {
+  color: #C4C4C4;
+}
+
+.App .todo-form button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+  height: 3.7rem;
+  border: solid thin #E5E5E5;
+  background: #E5E5E5;
+}
+
+.App .todo-form button:hover {
+  cursor: pointer;
+}
+
+.App .todo-form .add-todo {
+  width: 100%;
+  max-width: 3.5rem;
+  min-width: 3.5rem;
+  margin: 0 1rem 0 0;
+
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.App .todo-form .clear-todos {
+  width: 100%;
+  max-width: 15rem;
+  border-radius: 0.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 476px) {
+  .App .todo-form .clear-todos {
+    margin: 1rem 0 0 0;
+    width: 100%;
+  }
+}
+
+.App .todos-wrapper .todo {
+  margin: 0 auto 1.2rem;
+}
+
+.App .todos-wrapper .todo:hover {
+  cursor: pointer;
+}
+
+.App .todos-wrapper .todo.strike {
   text-decoration: line-through;
 }
