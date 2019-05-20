@@ -1,9 +1,11 @@
 import React from 'react'
+import './Todo.css'
 
 const TodoForm = (props) => {
   const { addTodoHandler, clearTodosHandler, handleInputChange } = props
   return (
     <form
+      className="todo-form"
       name="todo-form"
       onSubmit={addTodoHandler}
     >
@@ -11,13 +13,13 @@ const TodoForm = (props) => {
         type="text"
         name="task"
         value={props.task}
-        placeholder="Add a todo..."
+        placeholder="e.g. write a blog post"
         onChange={handleInputChange}
       />
-      <button onClick={addTodoHandler}>
-        Add Todo
+      <button className="add-todo" onClick={addTodoHandler}>
+        +
       </button>
-      <button onClick={clearTodosHandler}>Clear Completed</button>
+      <button className="clear-todos" onClick={clearTodosHandler}>Clear Completed</button>
     </form>
   )
 }
